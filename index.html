@@ -94,10 +94,15 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We did X.
-
-              Then we did Y, which we call 
-              <span class="technique-name">Yes</span>
+              We designed and implemmented a robot that sorts blocks accourding to color into goal locations that it must 
+              discover through trial and error. We desinged an environment with two goal location and blocks of two colors, 
+              red and green, where red or green have an optimal goal location which does not depend of the other color. 
+              This project was implemented using 'classical' robotic methods using HSV color sorting, an inverse kinematics
+              controller, and preprogrammed assumtions about the table-block environment. This project is designed to 
+              serve as a baseline comparison to unsupervised learning based implementations of object perception and 
+              robotic manupulation. We also started the process of replacing the perception system with an unsupervised learning 
+              algorithm(TODO: be more specific about the unsupervised algorithm here?).
+              <span class="technique-name"> unsupervised learning </span>
             </p>
           </div>
         </div>
@@ -128,11 +133,11 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <!-- Design -->
+    
+    <!-- Introduction -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Design</h2>
+        <h2 class="title is-3">Introduction</h2>
         <!-- TODO add figures for these -->
         <h3 class="title is-4">Original Goals</h3>
         <div class="content has-text-justified">
@@ -142,6 +147,38 @@
         </div>
 
         <h3 class="title is-4">Final Goals</h3>
+        <div class="content has-text-justified">
+          <p>
+            Create an intuitive testing ground... (Combine to one section Goals?)
+          </p>
+        </div>
+        <h3 class="title is-4">Motivation</h3>
+        <div class="content has-text-justified">
+          <p>
+            This project was motivated by ...
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Introduction. -->
+
+    <!-- Design -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Design</h2>
+        <!-- TODO add figures for these -->
+        <h3 class="title is-4">Functionality</h3>
+        <div class="content has-text-justified">
+          <p>
+            Design of the environment: ...
+            How this led to the disign of the perception system,
+            How this led to the desing of the sorting algorithm.
+            Put that diagram here? that is in software right now
+          </p>
+        </div>
+
+        <h3 class="title is-4">Specific Decisions</h3>
         <div class="content has-text-justified">
           <p>
             Create an intuitive testing ground...

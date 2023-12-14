@@ -139,15 +139,14 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Introduction</h2>
         <!-- TODO add figures for these -->
-        <h3 class="title is-4">Original and Final Goals</h3>
+        <h3 class="title is-4">Motivation</h3>
         <div class="content has-text-justified">
           <p>
-            This project was intended to contribute to research into unsupervised learning through robotic interaction, and more specifically building 
-            The task was diesigned to involve a UR5 robot arm using an RGB camera to interact with a small environment with muliple objects
-            and move them to a goal location that must be discovered through trial and error. This kind of task is
-            difficult for current machine learning techniques, but representations that can keep track of multiple objects
-            and update knowledge about their respective properties should make it possible for machine learning to solve
-            the task.
+            This project was intended to contribute to research into unsupervised learning through robotic interaction, and more specifically 
+            learning unsupervised object-centric representations. Object-centric representations are hoped to provide powerful functionlity like,
+            models for physics understanding, multi-agent prediction and planning and causal reasoning [<a href="https://arxiv.org/abs/2307.07147">Stocking</a>].
+            
+            
           </p>
         </div>
 
@@ -158,10 +157,21 @@
           </p>
         </div> -->
 
-        <h3 class="title is-4">Motivation</h3>
+        <h3 class="title is-4">Original and Final Goals</h3>
         <div class="content has-text-justified">
           <p>
-            This project was motivated by ...
+            We wanted to build a robotic system that could solve a task in an object-centric, partially-unobservable environment. 
+            Our goal was to use a UR5 robot arm and an RGB/Depth camera to interact with with blocks
+            and move them to a goal location. There would be two goal locations and the correct goal location will 
+            be unknown to the robot at the beginning, and the robot will have to respond to outside feedback to learn the correct goal. 
+            We aimed to develop an algorithm for solving the task using classical methods to serve as a baseline to compare ML approaches.
+            Our reach goal was to replace the perception, action planning, or robotic control with an unsupervised deep learning algorithm. 
+            In the end, we made progress an unsupervised object-centric deep neural network to replace the perception system.
+
+            This kind of task is
+            difficult for current machine learning techniques, but representations that can keep track of multiple objects
+            and update knowledge about their respective properties should make it possible for machine learning to solve
+            the task.
           </p>
         </div>
 
@@ -173,23 +183,45 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Design</h2>
-        <!-- TODO add figures for these -->
-        <h3 class="title is-4">Functionality</h3>
-        <div class="content has-text-justified">
-          <p>
-            Design of the environment: ...
-            How this led to the disign of the perception system,
-            How this led to the desing of the sorting algorithm.
-            Put that diagram here? that is in software right now
-          </p>
-        </div>
+       
+        <!-- Overview. -->
+        <h3 class="title is-4">Overview</h3>
+        
+        <div class="columns is-centered">
 
-        <h3 class="title is-4">Specific Decisions</h3>
+          <!-- Design description -->
+          <div class="column">
+            <div class="content has-text-justified">
+              <p>
+                Our design involved a the table-block environment which is observed by the camera. The camera reports 
+                the state of the environment to an algorithm which directs the arm to change the environment. When blocks are placed onto a goal location, 
+                the robot waits for human feedback to observe the reward state, which then inform the following actions of moveing blocks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Diagram -->
+          <div class="column">
+            <div class="content">
+              <!-- <h2 class="title is-5 plot-title">Architecture</h2> -->
+              <img src="./static/images/software-design.png"
+                 class="image"
+                 width="50%"
+                 alt="Software architecture."/>
+            </div>
+          </div>
+
+
+        </div>
+        <!--/ Overview. -->
+        <!--/ Perception. -->
+        <h3 class="title is-4">Environment</h3>
         <div class="content has-text-justified">
           <p>
-            Create an intuitive testing ground...
+            The environment consists of a table with rectangular wooden blocks that are red or green. The goal locations are blue cardboard circles taped to the table.
           </p>
         </div>
+        <!--/ Perception. -->
 
       </div>
     </div>

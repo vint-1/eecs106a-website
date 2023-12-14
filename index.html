@@ -214,14 +214,27 @@
 
         </div>
         <!--/ Overview. -->
-        <!--/ Perception. -->
+        <!--/ Environment. -->
         <h3 class="title is-4">Environment</h3>
         <div class="content has-text-justified">
           <p>
             The environment consists of a table with rectangular wooden blocks that are red or green. The goal locations are blue cardboard circles taped to the table.
           </p>
         </div>
+        <!--/ Environment. -->
         <!--/ Perception. -->
+        <h3 class="title is-4">Perception</h3>
+        <div class="content has-text-justified">
+          <p>
+            The perception system consists of a RGB-Depth camera mounted on a tripod that looks down onto the table. The blocks and goal locations are localized
+            with respect to the camera usuing the camera intrinscts and the depth meansument. The camera is localized with respect to the UR5 are using an AR tag
+            which is fixed to the base of the robot. Thus we are able to localize the blocks and goals with respect to the UR5 arm. The camera recognizes the 
+            blocks using HSV color filtering. After masking for red, green or blue. Just a color mask will find multiple blocks so we apply K-means clustering 
+            to the mask image to determine the number and locations of blocks.
+
+          </p>
+        </div>
+        <!--/ Environment. -->
 
       </div>
     </div>

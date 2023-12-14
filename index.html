@@ -229,8 +229,8 @@
             The perception system consists of a RGB-Depth camera mounted on a tripod that looks down onto the table. The blocks and goal locations are localized
             with respect to the camera usuing the camera intrinscts and the depth meansument. The camera is localized with respect to the UR5 are using an AR tag
             which is fixed to the base of the robot. Thus we are able to localize the blocks and goals with respect to the UR5 arm. The camera recognizes the 
-            blocks using HSV color filtering. After masking for red, green or blue. Just a color mask will find multiple blocks so we apply K-means clustering 
-            to the mask image to determine the number and locations of blocks.
+            blocks using HSV color filtering. After masking for red, green or blue. Just a color mask cannot deal with multiple blocks, so we apply K-means clustering 
+            to the mask image to determine the number and locations of blocks of the same color.
 
           </p>
         </div>

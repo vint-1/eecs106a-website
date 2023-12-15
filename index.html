@@ -300,7 +300,7 @@
               </p>
             </div>
           </div>
-
+        </div>
           <!-- <p>
             More text here if needed...
           </p> -->
@@ -381,8 +381,19 @@
         <!-- Software description -->
         <div class="content has-text-justified">
           <p>
-            We also performed some experiments on applying unsupervised learning to improve the perception abilities of the system...
-
+            We also performed some experiments on applying unsupervised learning to 
+            improve the perception abilities of the system.
+            Instead of relying on HSV thresholding, which has to be recalibrated and adjusted
+            for new objects and lighting conditions, we instead tried using an object detection algorithm
+            trained on a dataset consisting of blocks moving around a scene.
+          </p>
+          <p>
+            Specifically, we used the model in <a href=https://arxiv.org/abs/2307.07147>Stocking et. al. 2023</a>,
+            which is an unsupervised object detection algorithm based on
+            <a href="https://proceedings.neurips.cc/paper/2021/hash/a860a7886d7c7e2a8d3eaac96f76dc0d-Abstract.html">SIMONe</a>
+            . These algorithms produce object segmentation masks without requiring explicit object labels in the training dataset,
+            which make them particularly useful for our application. The object masks can be easily be used to
+            compute the 3D position of the object.
           </p>
         </div>
 
@@ -406,10 +417,20 @@
         <h2 class="title is-3">Results</h2>
 
         <!-- Something good -->
-        <h3 class="title is-4">Section 1</h3>
+        <h3 class="title is-4">Unsupervised Learning</h3>
         <div class="content has-text-justified"> 
           <p>
-            Describe results...
+            Training our model on the <a href="https://rohitgirdhar.github.io/CATER/">CATER dataset</a>,
+            we find that our model shows modest performance, with good reconstraction of the video frames,
+            but poor ojbect segmentation. Despite being able to make out some shapes, it
+            did not generalize well to out-of-distribution objects.
+          </p>
+          <p>
+            We believe that performance could be significantly improved with a more diverse
+            and high-quality dataset. In particular, one with fewer objects that more closely
+            matches our workspace, and a dataset with more movement of objects could
+            allow the model to overfit less and learn more generalizable features.
+            Furthermore, we believe hyperparameter tuning could also improve the model.
           </p>
         </div>
         
@@ -419,7 +440,7 @@
           <div class="column">
             <!-- 1 -->
             <div class="content">
-              <h2 class="title is-5 plot-title">Heading 1</h2>
+              <h2 class="title is-5 plot-title">Heading 1 (Add unsupervised results)</h2>
               <img src="./static/images/perception-results.png"
                  class="image"/>
             </div>

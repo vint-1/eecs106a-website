@@ -258,6 +258,54 @@
         <h2 class="title is-3">Implementation</h2>
         
         <!-- Setup. -->
+        <h3 class="title is-4">Components</h3>
+          <div class="columns is-centered">
+            <div class="column">
+              <!-- Robodesk -->
+              <div class="content">
+                <h2 class="title is-5 plot-title">Robotic Arm</h2>
+                <img src="./static/images/exp-robot.png"
+                   class="image"
+                   width="80%"
+                   alt="robot arm"/>
+              </div>
+              <p>
+                We used a UR5 Robot, which is a 6-DOF arm manufactured by Universal Robots. For control, we use the MoveIt package to plan and execute trajectories; this package has a backbone of IKFast, which is a library that generates analytical solutions to the inverse kinematics problem. The main purpose of this component is to move the gripper to positions where it can pick up and move objects as desired.
+              </p>
+            </div>
+            <div class="column">
+              <!-- Robodesk -->
+              <div class="content">
+                <h2 class="title is-5 plot-title">Gripper</h2>
+                <img src="./static/images/exp-gripper.png"
+                   class="image"
+                   width="80%"
+                   alt="robot arm"/>
+              </div>
+              <p>
+                The end-effector tool used for our project is the Robotiq 2F-140 gripper, with 1 degree of freedom. This is primarily used for grabbing and releasing objects.
+              </p>
+            </div>
+            <div class="column">
+              <!-- Robodesk -->
+              <div class="content">
+                <h2 class="title is-5 plot-title">Camera</h2>
+                <img src="./static/images/exp-camera.png"
+                   class="image"
+                   width="80%"
+                   alt="robot arm"/>
+              </div>
+              <p>
+                We used an Intel Realsense D435i camera, which provides both visual and depth information. This is mounted on a camera stand and is positioned in a top-down view of the working area. The main purposes of the camera are to localize the UR5 arm with respect to the rest of the environment and perceive objects of interest within the environment.
+              </p>
+            </div>
+          </div>
+
+          <!-- <p>
+            More text here if needed...
+          </p> -->
+
+        </div>
         <h3 class="title is-4">Experimental Setup</h3>
         <div class="content has-text-justified">
           
@@ -271,56 +319,17 @@
           </div>
 
           <p>
-            Note the AT tag, plain color table, brightly and distinnctly colored objects, 
+            Here is the setup of the environment with all of the components together. The base of the UR5 robot is kept at a fixed position on the table, and with the camera on the stand, the AR tag on the wooden base frame of the robot is used to establish the position of the robot and camera relative to each other. Then, the various goal positions and blocks in the environment are processed by the camera and these objects are then accurately localized with respect to the rest of the system. Below shows the processed information of the enviroment within RViz.
           </p>
 
-          <div class="columns is-centered">
-            <div class="column">
-              <!-- Robodesk -->
-              <div class="content">
-                <h2 class="title is-5 plot-title">Robotic Arm</h2>
-                <img src="./static/images/exp-robot.png"
+          <div class="column is-full-width"> 
+            <img src="./static/images/rviz.png"
                    class="image"
-                   width="80%"
-                   alt="robot arm"/>
-              </div>
-              <p>
-                UR5 Robot arm - a 6 revolute joints
-              </p>
-            </div>
-            <div class="column">
-              <!-- Robodesk -->
-              <div class="content">
-                <h2 class="title is-5 plot-title">Gripper</h2>
-                <img src="./static/images/exp-gripper.png"
-                   class="image"
-                   width="80%"
-                   alt="robot arm"/>
-              </div>
-              <p>
-                Robotiq 2F-140, 2 Fingered 140mm gripper 
-              </p>
-            </div>
-            <div class="column">
-              <!-- Robodesk -->
-              <div class="content">
-                <h2 class="title is-5 plot-title">Camera</h2>
-                <img src="./static/images/exp-camera.png"
-                   class="image"
-                   width="80%"
-                   alt="robot arm"/>
-              </div>
-              <p>
-                Intel RealSense D435i camera, RGB Depth.
-              </p>
-            </div>
+                   width="70%"
+                   alt="RViz representation of environment."/>
           </div>
 
-          <!-- <p>
-            More text here if needed...
-          </p> -->
-
-        </div>
+          </div>
         <!--/ Experimental Setup -->
 
         <!--(OLD) Software. -->

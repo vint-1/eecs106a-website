@@ -219,6 +219,7 @@
         <div class="content has-text-justified">
           <p>
             The environment consists of a table with rectangular wooden blocks that are red or green. The goal locations are blue cardboard circles taped to the table.
+            It is assumed that each goal has a reward value associated with a color, for example, all red blocks will incur a reward of x if placed on goal y.
           </p>
         </div>
         <!--/ Environment. -->
@@ -229,13 +230,24 @@
             The perception system consists of a RGB-Depth camera mounted on a tripod that looks down onto the table. The blocks and goal locations are localized
             with respect to the camera usuing the camera intrinscts and the depth meansument. The camera is localized with respect to the UR5 are using an AR tag
             which is fixed to the base of the robot. Thus we are able to localize the blocks and goals with respect to the UR5 arm. The camera recognizes the 
-            blocks using HSV color filtering. After masking for red, green or blue. Just a color mask cannot deal with multiple blocks, so we apply K-means clustering 
-            to the mask image to determine the number and locations of blocks of the same color.
+            blocks using HSV color filtering and making masks for the colors red, green or blue. Just a color mask cannot deal with multiple blocks, so we apply 
+            K-means clustering to the mask image to determine the number and centroids of blocks of the same color.
 
           </p>
         </div>
-        <!--/ Environment. -->
+        <!--/ Perception. -->
+        <!--/ UR5 Control. -->
+        <h3 class="title is-4">UR5 Control and Human Feedback</h3>
+        <div class="content has-text-justified">
+          <p>
+            We used the MoveIt inverse kinematic controller to control the UR5 arm. We wrote procudures to reliably pick and place blocks given a block's location 
+            and a target location. Our sorting algorithm will first put a red block on a goal location. It will then wait for a human to input 
+            into the terminal the current reward. It will continue testing all colors on all goals, and then put the blocks on the optimal goal to 
+            maximize the reward.
 
+          </p>
+        </div>
+        <!--/ UR5 Control. -->
       </div>
     </div>
     <!--/ Design. -->
@@ -259,7 +271,7 @@
           </div>
 
           <p>
-            We used a setup that includes...
+            Note the AT tag, plain color table, brightly and distinnctly colored objects, 
           </p>
 
           <div class="columns is-centered">
@@ -273,7 +285,7 @@
                    alt="robot arm"/>
               </div>
               <p>
-                We used a UR5 Robot arm...
+                UR5 Robot arm - a 6 revolute joints
               </p>
             </div>
             <div class="column">
@@ -286,7 +298,7 @@
                    alt="robot arm"/>
               </div>
               <p>
-                We used a Robotiq gripper...
+                Robotiq 2F-140, 2 Fingered 140mm gripper 
               </p>
             </div>
             <div class="column">
@@ -299,34 +311,34 @@
                    alt="robot arm"/>
               </div>
               <p>
-                We used a ...
+                Intel RealSense D435i camera, RGB Depth.
               </p>
             </div>
           </div>
 
-          <p>
+          <!-- <p>
             More text here if needed...
-          </p>
+          </p> -->
 
         </div>
         <!--/ Experimental Setup -->
 
-        <!-- Software. -->
-        <h3 class="title is-4">Software</h3>
+        <!--(OLD) Software. -->
+        <!-- <h3 class="title is-4">Software</h3>
         
-        <div class="columns is-centered">
+        <div class="columns is-centered"> -->
 
           <!-- Software description -->
-          <div class="column">
+          <!-- <div class="column">
             <div class="content has-text-justified">
               <p>
                 Our Software uses X apporach and y design. The figure to the right shows the design...
               </p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Diagram -->
-          <div class="column">
+          <!-- <div class="column">
             <div class="content">
               <h2 class="title is-5 plot-title">Software Architecture</h2>
               <img src="./static/images/software-design.png"
@@ -334,9 +346,18 @@
                  width="50%"
                  alt="Software architecture."/>
             </div>
-          </div>
+          </div> -->
 
 
+        <!-- </div> -->
+        <!--/ (OLD) Software. -->
+
+        <!--/ Software. -->
+        <h3 class="title is-4">Environment</h3>
+        <div class="content has-text-justified">
+          <p>
+            We used ROS Noetic 
+          </p>
         </div>
         <!--/ Software. -->
 

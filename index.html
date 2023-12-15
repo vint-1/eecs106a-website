@@ -94,8 +94,8 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We designed and implemmented a robot that sorts blocks accourding to color into goal locations that it must 
-              discover through trial and error. We desinged an environment with two goal location and blocks of two colors, 
+              We designed and implemented a robot that sorts blocks according to color into goal locations that it must 
+              discover through trial and error. We designed an environment with two goal locations and blocks of two colors, 
               red and green, where red or green have an optimal goal location which does not depend of the other color. 
               This project was implemented using 'classical' robotic methods using HSV color sorting, an inverse kinematics
               controller, and preprogrammed assumtions about the table-block environment. This project is designed to 
@@ -421,16 +421,15 @@
         <div class="content has-text-justified"> 
           <p>
             Training our model on the <a href="https://rohitgirdhar.github.io/CATER/">CATER dataset</a>,
-            we find that our model shows modest performance, with good reconstraction of the video frames,
-            but poor object segmentation. Despite being able to make out some shapes, it
-            did not generalize well to out-of-distribution objects.
+            we find that our model shows modest performance, with good reconstruction of the video frames,
+            but relatively poor object segmentation. Despite being able to make out some shapes, it
+            has yet to generalize well to out-of-distribution objects.
           </p>
           <p>
             We believe that performance could be significantly improved with a more diverse
-            and high-quality dataset. In particular, one with fewer objects that more closely
-            matches our workspace, and a dataset with more movement of objects could
-            allow the model to overfit less and learn more generalizable features.
-            Furthermore, we believe hyperparameter tuning could also improve the model.
+            and high-quality dataset. In particular, one with fewer objects that are the same shape as the blocks, so it more closely
+            resembles our workspace. Additionally, a dataset with more object movement within each video could allow the model to better learn
+            the nature of the objects, potentially allowing to better generalizability. Moreover, we believe further hyperparameter tuning could also improve the model.
           </p>
         </div>
         
@@ -441,14 +440,14 @@
             <!-- 1 -->
             <div class="content">
               <h2 class="title is-5 plot-title">Heading 1 (Add unsupervised results)</h2>
-              <img src="./static/images/perception-results.png"
+              <img src="./static/images/unsupervised_result_example.gif"
                  class="image"/>
             </div>
             
             <!-- 2 -->
             <div class="content">
               <h2 class="title is-5 plot-title">Heading 2</h2>
-              <img src="./static/images/perception-results.png"
+              <img src="./static/images/training_loss_example.png"
                  class="image"/>
             </div>
           </div>

@@ -353,13 +353,18 @@
         <!--/ (OLD) Software. -->
 
         <!--/ Software. -->
-        <h3 class="title is-4">Environment</h3>
+        <h3 class="title is-4">Software</h3>
         <div class="content has-text-justified">
           <p>
-            We used ROS Noetic 
+            We used ROS Noetic running on Ubuntu 20.04 LTS (Focal Fossa). We used the <a href="https://github.com/ros-industrial/universal_robot">ROS-Industrial Universal Robots</a> 
+            repository on Github for MoveIt functionality on the UR5. We used the <a href="https://github.com/TAMS-Group/robotiq">Robotiq Fork by TAMS</a> to control the gripper in 
+            ROS Noetic. We also used the <a href="https://github.com/ros-perception/ar_track_alvar">ar_track_alvar</a> package for AR tag functionality. 
+
+            We structured our software into a perception node, and an executive node. The perception node published the location of the blocks and goals, while the 
+            executive node directed the robot using the envirionment state and human input.
           </p>
         </div>
-        <!--/ Software. -->
+        <!--/ Software. --> 
 
         <!-- Unsupervised. -->
         <h3 class="title is-4">Unsupervised Approach</h3>

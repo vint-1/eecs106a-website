@@ -519,13 +519,13 @@
     based on the feedback. Our results show that we did this successfully for the classical method. The biggest difficulty of this was setting up the UR5 system from scratch. 
     We ended up running into many unforseen issues, many of which were fixed by updating our version of Ubuntu and upgrading our version of ROS from Melodic to Noetic. We also had to spend a lot of time 
     getting used to a new codebase that was different from what we were used to with the Sawyer arms. 
-    <br>
     </p>
+    <br>
     One flaw is that our classical task doesn't work as expected every time. Sometimes the arm would miss a block, and we'd have to start over, or the arm would follow a strange trajectory. Given 
     more time, we would have considered developing a better path planning algorithm and recalibrating our measurements for better accuracy. We could also improve our course correction 
     scheme so the robot recognizes when it's missed a block. 
-    <br>
     <p>
+      <br>
     <p>
       On the unsupervised side, a major issue was adapting the original model to fit our environment. Kaylene's adaptiation of the SIMONe model, which we were using, was originally intended for Waymo autonomous vehicle datasets with three different 
       camera angles. For our project, we just have a singular stable camera, and objects moving around a scene. This required us to curate our own dataset and modify the parameters of the model. With more time, we would have tried more experiments to achieve better 

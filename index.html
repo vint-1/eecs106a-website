@@ -212,22 +212,6 @@
 
         </div>
 
-        
-        <!--/ Overview. -->
-        <!--/ Difficulties and Tradeoffs. -->
-        <h3 class="title is-4">Difficulties and Tradeoffs</h3>
-        <div class="content has-text-justified">
-          <p>
-            One major difficulty in our design was expressing the end effector coordinates in the camera frame. This is because by default, the frames of the robot are completely
-            separated from the camera frame. To solve this problem, we used a fixed AR tag at the base of the robot to serve as a fixed calibration position. By measuring the position of the base of the robot 
-            relative to this AR tag, we were able to create a transfrom from the camera frame to the end effector. We found that this calibration is not perfect, and we had to make later adjustments 
-            to make sure the position of the arm moved to where we expected it to be relative to the camera. 
-          </p>
-          <p>
-            For our project, manually measuring the position of the AR tag to the robot base frame worked well enough, but we would imagine that if the robot task had to be more precise, e.g.
-          a surgical medical robot, then we'd have to think of a robust way of linking the frames.
-          </p>
-        </div>
 
 
         <!--/ Overview. -->
@@ -391,6 +375,22 @@
           </p>
         </div>
         <!--/ Software. --> 
+
+                <!--/ Overview. -->
+        <!--/ Difficulties and Tradeoffs. -->
+        <h3 class="title is-4">Difficulties and Tradeoffs</h3>
+        <div class="content has-text-justified">
+          <p>
+            One major difficulty in our design was expressing the end effector coordinates in the camera frame. This is because by default, the frames of the robot are completely
+            separated from the camera frame. To solve this problem, we used a fixed AR tag at the base of the robot to serve as a fixed calibration position. By measuring the position of the base of the robot 
+            relative to this AR tag, we were able to create a transfrom from the camera frame to the end effector. We found that this calibration is not perfect, and we had to make later adjustments 
+            to make sure the position of the arm moved to where we expected it to be relative to the camera. 
+          </p>
+          <p>
+            For our project, manually measuring the position of the AR tag to the robot base frame worked well enough, but we would imagine that if the robot task had to be more precise, e.g.
+          a surgical medical robot, then we'd have to think of a robust way of linking the frames.
+          </p>
+        </div>
 
         <!-- Unsupervised. -->
         <h3 class="title is-4">Unsupervised Approach</h3>

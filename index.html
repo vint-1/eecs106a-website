@@ -211,6 +211,26 @@
           </div>
 
         </div>
+
+        
+        </div>
+        <!--/ Overview. -->
+        <!--/ Difficulties and Tradeoffs. -->
+        <h3 class="title is-4">Difficulties and Tradeoffs</h3>
+        <div class="content has-text-justified">
+          <p>
+            One major difficulty in our design was expressing the end effector coordinates in the camera frame. This is because by default, the frames of the robot are completely
+            separated from the camera frame. To solve this problem, we used a fix AR tag at the base of the robot to serve as a fixed calibration position. By measuring the position of the base of the robot 
+            relative to this AR tag, we were able to create a transfrom from the camera frame to the end effector. We found that this calibration is not perfect, and we had to make later adjustments 
+            to make sure the position of the arm moved to where we expected it to be relative to the camera. 
+          </p>
+          <p>
+            For our project, manually measuring the position of the AR tag to the robot base frame worked well enough, but we would imagine that if the robot task had to be more precise, e.g.
+          a surgical medical robot, then we'd have to think of a robust way of linking the frames.
+          </p>
+        </div>
+
+
         <!--/ Overview. -->
         <!--/ Environment. -->
         <h3 class="title is-4">Environment</h3>
@@ -519,11 +539,11 @@
   <div class="column is-full-width">
     <h2 class="title is-3">Team</h2>
     Yarden Goraly: Yarden is a computer science and music major interested in combining machine learning techniques with physical systems. He has experience using deep learning for image
-    reconstruction and is looking to pivot into the field of robotics. \n
+    reconstruction and is looking to pivot into the field of robotics. <br>
     Rishi Yang: Rishi is a computer science student interested in developing autonomous systems. He
-    has experience working with unsupervised analysis of images, and software development in general. \n
+    has experience working with unsupervised analysis of images, and software development in general. <br>
     Vint Lee: Vint is a computer science student interested in using machine learning to combine
-    interaction with perception. \n
+    interaction with perception. <br>
     Nathan Juan: Nathan is a senior studying EECS and he loves exploring how ML can make our lives
     easier (and eventually replace us).
   </div>

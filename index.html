@@ -448,8 +448,8 @@
             the nature of the objects, potentially allowing to better generalizability. Moreover, we believe further hyperparameter tuning could also improve the model.
           </p>
           <p>
-            Our results show promise in being able to segment our environment into representation masks that corresponds to objects in the environment. 
-            With further tuning. Given our time constraints, we were unable to get strong reconstructions on out-of-distribution data. If we had more time with the project,
+            Our results show promise in being able to segment our environment into representation masks that correspond to different objects. 
+            Given our time constraints, we were unable to get strong reconstructions on out-of-distribution data. If we had more time with the project,
             or if we decide to continue this line of research, we would first improve segmentation performance. Then, we would use the object masks to output a (x,y) coordinate
             of the object on the image place. Using camera intrinsics, we could get the 3D coordinate of the block, and replace the classical HSV thresholding technique. 
             Further research in this area would be to observe how disentangled latent variables can inform the robot on the properties of the object in order to improve performance of the task. 
@@ -463,7 +463,7 @@
                 one goal would be to see a comparison of losses with varied hyperparameters. 
               </p>
               <p>
-                
+
               </p>
           <img src="./static/images/training_loss_example.png"
               class="image"/>

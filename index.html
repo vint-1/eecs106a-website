@@ -521,13 +521,20 @@
     getting used to a new codebase that was different from what we were used to with the Sawyer arms. 
     </p>
     <br>
+    <p>
     One flaw is that our classical task doesn't work as expected every time. Sometimes the arm would miss a block, and we'd have to start over, or the arm would follow a strange trajectory. Given 
     more time, we would have considered developing a better path planning algorithm and recalibrating our measurements for better accuracy. We could also improve our course correction 
     scheme so the robot recognizes when it's missed a block. 
-    <p>
+    </p>
       <br>
     <p>
-      On the unsupervised side, a major issue was adapting the original model to fit our environment. Kaylene's adaptiation of the SIMONe model, which we were using, was originally intended for Waymo autonomous vehicle datasets with three different 
+      On the unsupervised side, we made good progress for some parts of the classical method to be replaced. However, having the robot achieve what we did with the classical approach using
+      an unsupervised way proved to be a monumental challenge that is far to ambitious for the timeframe of our project. Despite this, we are happy 
+      with the progress we made, and the results provide a good foundation for extending the research project. 
+    </p>
+    <br>
+    <p>
+      A major issue was adapting the original model to fit our environment. Kaylene's adaptation of the SIMONe model, which we were using, was originally intended for Waymo autonomous vehicle datasets with three different 
       camera angles. For our project, we just have a singular stable camera, and objects moving around a scene. This required us to curate our own dataset and modify the parameters of the model. With more time, we would have tried more experiments to achieve better 
       results using our ideas for improvement outlined in the previous section.
     </p>

@@ -213,6 +213,23 @@
 
         </div>
         <!--/ Overview. -->
+        <!--/ Difficulties and Tradeoffs. -->
+        <h3 class="title is-4">Difficulties and Tradeoffs</h3>
+        <div class="content has-text-justified">
+          <p>
+            One major difficulty in our design was expressing the end effector coordinates in the camera frame. This is because by default, the frames of the robot are completely
+            separated from the camera frame. To solve this problem, we used a fix AR tag at the base of the robot to serve as a fixed calibration position. By measuring the position of the base of the robot 
+            relative to this AR tag, we were able to create a transfrom from the camera frame to the end effector. We found that this calibration is not perfect, and we had to make later adjustments 
+            to make sure the position of the arm moved to where we expected it to be relative to the camera. 
+          </p>
+          <p>
+            For our project, manually measuring the position of the AR tag to the robot base frame worked well enough, but we would imagine that if the robot task had to be more precise, e.g.
+           a surgical medical robot, then we'd have to think of a robust way of linking the frames.
+          </p>
+        </div>
+
+        </div>
+        <!--/ Overview. -->
         <!--/ Environment. -->
         <h3 class="title is-4">Environment</h3>
         <div class="content has-text-justified">
@@ -421,6 +438,15 @@
         <p>
           Below are some demos of the classical algorithm at work. We test each color in both goal positions, receiving feedback from humans to determine the optimal locations of all blocks. 
           Notice that the robot is able to accurately locate all positions and move accordingly!</p>
+        <p>
+          You can see from the demos that the robot tries to place a block on a certain goal. It then recieves human feedback on whether that goal was correct or not for that color 
+          of block, and then it adjusts accordingly. In one example all of the blocks need to go on one goal, and in another one, none of the goals are good. We also tested situations 
+          in which the robot initially placed a block at a goal, was given a bad score, had to take it off, then put the same block on later and recieved a good score. 
+        </p>
+        <p>
+          Our project works well in most cases. However, we did notice that sometimes the robot would fail to pick up a block, and then it doesn't do a good job of correcting itself. It would instead 
+          try to place a phantom block on the goal. In addition, the arm would sometimes reach a singularity, and the Moveit inverse kinematics solver would find a strange trajectory. 
+        </p>
           <br>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1OyvE3OIxD8S3YmURUeYx-vx-J7NDZThn/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1-zwcGBHxTS_oxWrfbyMYRja4g0B7CQBW/preview" frameborder="0" allowfullscreen></iframe>
@@ -484,6 +510,30 @@
   </div>
 
   </div>
+
+  <div class="column is-full-width">
+    <h2 class="title is-3">Conclusion</h2>
+    <p>
+    Our original task was to design a learning environment in which a UR5 arm places objects in one of two goal locations, recieves feedback on whether the goal is correct, and adjusts 
+    based on the feedback. Our results show that we did this successfully for the classical method. The biggest difficulty of this was setting up the UR5 system from scratch. 
+    We ended up running into many unforseen issues, many of which were fixed by updating our version of Ubuntu and upgrading our version of ROS from Melodic to Noetic. We also had to spend a lot of time 
+    getting used to a new codebase that was different from what we were used to with the Sawyer arms. 
+    <br>
+    </p>
+    One flaw is that our classical task doesn't work as expected every time. Sometimes the arm would miss a block, and we'd have to start over, or the arm would follow a strange trajectory. Given 
+    more time, we would have considered developing a better path planning algorithm and recalibrating our measurements for better accuracy. We could also improve our course correction 
+    scheme so the robot recognizes when it's missed a block. 
+    <br>
+    <p>
+    <p>
+      On the unsupervised side, a major issue was adapting the original model to fit our environment. Kaylene's adaptiation of the SIMONe model, which we were using, was originally intended for Waymo autonomous vehicle datasets with three different 
+      camera angles. For our project, we just have a singular stable camera, and objects moving around a scene. This required us to curate our own dataset and modify the parameters of the model. With more time, we would have tried more experiments to achieve better 
+      results using our ideas for improvement outlined in the previous section.
+    </p>
+
+    </p>
+  </div>
+
   <div class="column is-full-width">
     <h2 class="title is-3">Team</h2>
     Yarden Goraly: Yarden is a computer science and music major interested in combining machine learning techniques with physical systems. He has experience using deep learning for image

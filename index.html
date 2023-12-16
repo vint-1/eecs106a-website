@@ -421,62 +421,57 @@
         <p>
           Below are some demos of the classical algorithm at work. We test each color in both goal positions, receiving feedback from humans to determine the optimal locations of all blocks. 
           Notice that the robot is able to accurately locate all positions and move accordingly!</p>
+          <br>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1OyvE3OIxD8S3YmURUeYx-vx-J7NDZThn/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1-zwcGBHxTS_oxWrfbyMYRja4g0B7CQBW/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1z3NMPCjo6tBEj7hDgBF__E46KCKHqNFZ/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1u3dqee8H_GzkwsXws3VEJknnF1tTCwYQ/preview" frameborder="0" allowfullscreen></iframe>
 
+      </div>
+    </div>        
         
-        
-        <div class="columns is-centered">
-          <div class="column">
-            <!-- Something good -->
-            <h3 class="title is-4">Unsupervised Learning</h3>
-            <div class="content has-text-justified"> 
-              <p>
-                Training our model on the <a href="https://rohitgirdhar.github.io/CATER/">CATER dataset</a>,
-                we find that our model shows modest performance, with good reconstruction (right, middle) of the video frames,
-                but relatively poor object segmentation (right, bottom). Despite being able to make out some shapes, it
-                has yet to generalize well to out-of-distribution objects.
-              </p>
-              <p>
-                We believe that performance could be significantly improved with a more diverse
-                and high-quality dataset. In particular, one with fewer objects that are the same shape as the blocks, so it more closely
-                resembles our workspace. Additionally, a dataset with more object movement within each video could allow the model to better learn
-                the nature of the objects, potentially allowing to better generalizability. Moreover, we believe further hyperparameter tuning could also improve the model.
-              </p>
-            </div>
-            <!-- 2 -->
-            <div class="content">
-              <h2 class="title is-5 plot-title">Training Loss</h2>
+    <div class="columns is-centered">
+      <div class="column">
+        <!-- Something good -->
+        <h3 class="title is-4">Unsupervised Learning</h3>
+        <div class="content has-text-justified"> 
+          <p>
+            Training our model on the <a href="https://rohitgirdhar.github.io/CATER/">CATER dataset</a>,
+            we find that our model shows modest performance, with good reconstruction (right, middle) of the video frames,
+            but relatively poor object segmentation (right, bottom). Despite being able to make out some shapes, it
+            has yet to generalize well to out-of-distribution objects.
+          </p>
+          <p>
+            We believe that performance could be significantly improved with a more diverse
+            and high-quality dataset. In particular, one with fewer objects that are the same shape as the blocks, so it more closely
+            resembles our workspace. Additionally, a dataset with more object movement within each video could allow the model to better learn
+            the nature of the objects, potentially allowing to better generalizability. Moreover, we believe further hyperparameter tuning could also improve the model.
+          </p>
+        </div>
+        <!-- 2 -->
+        <div class="content">
+          <h2 class="title is-5 plot-title">Training Loss</h2>
               <p>
                 This is an example training loss from one of our experiments. Training a single experiment took roughly half a day, so if we continue this project, 
                 it would be nice to see a comparison of losses with varied hyperparameters. 
               </p>
-              <img src="./static/images/training_loss_example.png"
-                 class="image"/>
-            </div>
-          </div>
-          
-          <div class="column">
-            <!-- 1 -->
-            <div class="content">
-              <h2 class="title is-5 plot-title">Ground Truth, Reconstruction, and Segmentation Maps</h2>
-              <img src="./static/images/unsupervised_result_example.gif"
-                 class="image"/>
-            </div>
-            
-            
-          </div>
-
+          <img src="./static/images/training_loss_example.png"
+              class="image"/>
         </div>
-        
+      </div>
+      
+      <div class="column">
+        <!-- 1 -->
+        <div class="content">
+          <h2 class="title is-5 plot-title">Ground Truth, Reconstruction, and Segmentation Maps</h2>
+          <img src="./static/images/unsupervised_result_example.gif"
+              class="image"/>
+        </div>
+            
         
       </div>
     </div>
   </div>
-
-    <!--/ Results -->
 
   </div>
 </section>

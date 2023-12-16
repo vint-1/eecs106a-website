@@ -100,9 +100,8 @@
               This project was implemented using 'classical' robotic methods using HSV color sorting, an inverse kinematics
               controller, and preprogrammed assumtions about the table-block environment. This project is designed to 
               serve as a baseline comparison to unsupervised learning based implementations of object perception and 
-              robotic manupulation. We also started the process of replacing the perception system with an unsupervised learning 
-              algorithm(TODO: be more specific about the unsupervised algorithm here?).
-              <span class="technique-name"> unsupervised learning </span>
+              robotic manupulation. We also investigated the use of a object-detection model trained with unsupervised learning
+              to improve the perception system.
             </p>
           </div>
         </div>
@@ -113,22 +112,20 @@
 </section>
 
 
-<!-- <section class="section">
-  If we want to show a video
+<section class="section">
   <div class="container is-max-desktop">
     
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
+        <h2 class="title is-3">Demo</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe width="700" height="450" src="https://drive.google.com/file/d/1u3dqee8H_GzkwsXws3VEJknnF1tTCwYQ/preview" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
   </div>
-</section> -->
+</section>
 
 
 <section class="section">
@@ -413,83 +410,66 @@
   <div class="container is-max-desktop">
     <!-- Results. -->
     <div class="columns is-centered">
+      
+        
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
 
-        <!-- Something good -->
-        <h3 class="title is-4">Unsupervised Learning</h3>
-        <div class="content has-text-justified"> 
-          <p>
-            Training our model on the <a href="https://rohitgirdhar.github.io/CATER/">CATER dataset</a>,
-            we find that our model shows modest performance, with good reconstruction of the video frames,
-            but relatively poor object segmentation. Despite being able to make out some shapes, it
-            has yet to generalize well to out-of-distribution objects.
-          </p>
-          <p>
-            We believe that performance could be significantly improved with a more diverse
-            and high-quality dataset. In particular, one with fewer objects that are the same shape as the blocks, so it more closely
-            resembles our workspace. Additionally, a dataset with more object movement within each video could allow the model to better learn
-            the nature of the objects, potentially allowing to better generalizability. Moreover, we believe further hyperparameter tuning could also improve the model.
-          </p>
-        </div>
-        
-        <div class="columns is-centered">
-
-          
-          <div class="column">
-            <!-- 1 -->
-            <div class="content">
-              <h2 class="title is-5 plot-title">Heading 1 (Add unsupervised results)</h2>
-              <img src="./static/images/unsupervised_result_example.gif"
-                 class="image"/>
-            </div>
-            
-            <!-- 2 -->
-            <div class="content">
-              <h2 class="title is-5 plot-title">Heading 2</h2>
-              <img src="./static/images/training_loss_example.png"
-                 class="image"/>
-            </div>
-          </div>
-
-          <div class="column">
-            <!-- 3 -->
-            <div class="content">
-              <h2 class="title is-5 plot-title">Heading 3</h2>
-              <img src="./static/images/perception-results.png"
-                 class="image"/>
-            </div>
-            
-            <!-- 4 -->
-            <div class="content">
-              <h2 class="title is-5 plot-title">Heading 4</h2>
-              <img src="./static/images/perception-results.png"
-                 class="image"/>
-            </div>
-          </div>
-
-        </div>
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <br/>
-  <br/>
-  <div class="container is-max-desktop">
-    <!-- Results. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Demo</h2>
-        <p>Below are some demo's of the classical algorithm at work. We test each color in both goal positions, receiving feedback from humans to determine the optimal locations of all blocks. Notice that the robot is able to accurately locate all positions and move accordingly!</p>
+        <h2 class="title is-4">Demonstrations</h2>
+        <p>
+          Below are some demos of the classical algorithm at work. We test each color in both goal positions, receiving feedback from humans to determine the optimal locations of all blocks. 
+          Notice that the robot is able to accurately locate all positions and move accordingly!</p>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1OyvE3OIxD8S3YmURUeYx-vx-J7NDZThn/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1-zwcGBHxTS_oxWrfbyMYRja4g0B7CQBW/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1z3NMPCjo6tBEj7hDgBF__E46KCKHqNFZ/preview" frameborder="0" allowfullscreen></iframe>
         <iframe width="700" height="450" src="https://drive.google.com/file/d/1u3dqee8H_GzkwsXws3VEJknnF1tTCwYQ/preview" frameborder="0" allowfullscreen></iframe>
+
+        
+        
+        <div class="columns is-centered">
+          <div class="column">
+            <!-- Something good -->
+            <h3 class="title is-4">Unsupervised Learning</h3>
+            <div class="content has-text-justified"> 
+              <p>
+                Training our model on the <a href="https://rohitgirdhar.github.io/CATER/">CATER dataset</a>,
+                we find that our model shows modest performance, with good reconstruction (right, middle) of the video frames,
+                but relatively poor object segmentation (right, bottom). Despite being able to make out some shapes, it
+                has yet to generalize well to out-of-distribution objects.
+              </p>
+              <p>
+                We believe that performance could be significantly improved with a more diverse
+                and high-quality dataset. In particular, one with fewer objects that are the same shape as the blocks, so it more closely
+                resembles our workspace. Additionally, a dataset with more object movement within each video could allow the model to better learn
+                the nature of the objects, potentially allowing to better generalizability. Moreover, we believe further hyperparameter tuning could also improve the model.
+              </p>
+            </div>
+            <!-- 2 -->
+            <div class="content">
+              <h2 class="title is-5 plot-title">Training Loss</h2>
+              <img src="./static/images/training_loss_example.png"
+                 class="image"/>
+            </div>
+          </div>
+          
+          <div class="column">
+            <!-- 1 -->
+            <div class="content">
+              <h2 class="title is-5 plot-title">Ground Truth, Reconstruction, and Segmentation Maps</h2>
+              <img src="./static/images/unsupervised_result_example.gif"
+                 class="image"/>
+            </div>
+            
+            
+          </div>
+
+        </div>
+        
+        
       </div>
     </div>
   </div>
+
     <!--/ Results -->
 
   </div>
